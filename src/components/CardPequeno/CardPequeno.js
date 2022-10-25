@@ -1,14 +1,18 @@
 import React from 'react';
-import { LayoutCardPequeno, TituloCardPequeno, InfosCardPequeno} from "./styles"
+import { LayoutCardPequeno, TituloCardPequeno, InfosCardPequeno, ImgCardPequeno} from "./styles"
 
 function CardPequeno(props) {
+    return (
         <LayoutCardPequeno>
-            <ImgCardPequeno src={props.img} />
+                {/* ERRO 13 acesso errado da props */}
+            <ImgCardPequeno src={props.imagem} />
             <InfosCardPequeno>
                 <TituloCardPequeno>{props.nome}</TituloCardPequeno>
-                <p>{props.perfil.descricao}</p>
+                {/* ERRO 13 acesso errado da props */}
+                <p>{props.descricao}</p>
             </InfosCardPequeno>
         </LayoutCardPequeno>
+    )
 }
 
 export default CardPequeno

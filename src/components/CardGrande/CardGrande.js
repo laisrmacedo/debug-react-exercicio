@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled components'
+
+import {LayoutCardGrande, ImgCardGrande, InfosCard, TituloCardGrande} from './styles'
 
 
 function CardGrande(props) {
@@ -7,10 +8,13 @@ function CardGrande(props) {
     return (
         <LayoutCardGrande>
             <ImgCardGrande src={ props.imagem } />
-            <InfosCardGrande>
+            <InfosCard>
                 <TituloCardGrande>{ props.nome }</TituloCardGrande>
-                <p>{ props.perfil.descricao }</p>
-            </InfosCardGrande>
+            {/* ERRO 14 acesso errado da props */}
+                <p>{ props.descricao }</p>
+            </InfosCard>
         </LayoutCardGrande>
     )
 }
+
+export default CardGrande
