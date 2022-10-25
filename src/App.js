@@ -1,16 +1,37 @@
 import React from 'react';
-import CardGrande from './components/CardGrande';
+import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import styled, { createGlobalStyle } from 'styled-components'
 import imagemPerfil from "./img/DP-Brock.png"
-import { CardPequeno } from './component/CardPequeno';
+import CardPequeno from './components/CardPequeno/CardPequeno';
 import downArrow from "./img/down-arrow.png"
 import iconePedra from "./img/rock-symbol.jpg"
 import iconeEstadio from "./img/pewter-gym.jpg"
-import iconeEmail from "./img/email"
-import iconePin from "../img/pin-endereco.png"
+import iconeEmail from "./img/email.png"
+import iconePin from "./img/pin-endereco.png"
 import iconeFB from "./img/facebook-logo-3.png"
 import iconeTT from "./img/twitter-logo-1-1.png"
+
+//ERRO 1 default CardGrande + endereço
+//ERRO 2 intalar styled-components
+//ERRO 3 default CardPequeno + endereço
+//ERRO 4 iconeEmail endereço
+//ERRO 5 iconePin endereço
+//ERRO 6 styled-components no CardGrande
+//ERRO 7 export styles CardPequeno
+//ERRO 8 importar tags estilizadas CardGrande
+//ERRO 9 InfosCard correçao do nome
+//ERRO 10 importar styled-components no styles CardGrande
+//ERRO 11 importar ImgCardPequeno 
+//ERRO 12 correçao de image
+//ERRO 13 acesso errado das props no CardPequeno
+//ERRO 14 acesso errado das props no CardGrande
+//ERRO 15 faltou [0]
+//ERRO 16 correçao de image e name
+//ERRO 17 passando o endereço e nao a img
+//ERRO 17 perfil.email
+//ERRO 19 return na funçao CardPequeno
+
 
 const GlobalStyle = createGlobalStyle`
     *{
@@ -64,7 +85,8 @@ function App() {
       <SectionPagina>
         <Titulos>Dados pessoais</Titulos>
         <CardGrande
-          imagem={perfil.image}
+          //ERRO 12 correçao de image
+          imagem={perfil.imagem}
           nome={perfil.nome}
           descricao={perfil.descricao}
         />
@@ -79,14 +101,15 @@ function App() {
         <CardPequeno
           imagem={iconeEmail}
           nome="E-mail:"
-          descricao={perfil}
+          descricao={perfil.email}
         />
       </SectionPagina>
       <SectionPagina>
         <CardPequeno
-          image={iconePin}
-          name="Cidade:"
-          description={perfil.cidade}
+          //passei para portugues
+          imagem={iconePin}
+          nome="Cidade:"
+          descricao={perfil.cidade}
         />
       </SectionPagina>
 
@@ -94,14 +117,16 @@ function App() {
       <SectionPagina>
         <Titulos>Experiências profissionais</Titulos>
         <CardGrande
-          imagem={perfil.experiencia.icone}
-          nome={perfil.experiencia.empresa}
-          descricao={perfil.experiencia.descricao}
+          //ERRO 15 faltou [0]
+          imagem={perfil.experiencia[0].icone}
+          nome={perfil.experiencia[0].empresa}
+          descricao={perfil.experiencia[0].descricao}
         />
 
         <CardGrande
-          image={perfil.experiencia[1].icone}
-          name={perfil.experiencia[1].empresa}
+          //ERRO 16 correçao de image e name
+          imagem={perfil.experiencia[1].icone}
+          nome={perfil.experiencia[1].empresa}
           descricao={perfil.experiencia[1].descricao}
         />
       </SectionPagina>
@@ -109,11 +134,12 @@ function App() {
       <SectionPagina>
         <Titulos>Minhas redes sociais</Titulos>
         <ImagemButton
-          imagem="./img/facebook-logo-3.png"
+        //ERRO 17 passando o endereço e nao a img
+          imagem={iconeFB}
           texto="Facebook"
         />
         <ImagemButton
-          imagem="./img/twitter-logo-1-1.png"
+          imagem={iconeTT}
           texto="Twitter"
         />
       </SectionPagina>

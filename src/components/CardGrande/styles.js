@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 
 export const LayoutCardGrande = styled.section`
         display: flex;
@@ -5,7 +6,7 @@ export const LayoutCardGrande = styled.section`
         border: 1px solid black;
         padding: 20px 10px;
         margin-bottom: 10px;
-        height: 200px;
+        height: 250px;
     `
 
 export const ImgCardGrande = styled.img`
